@@ -4,7 +4,7 @@
 @author: cookdavi
 """
 #Code written to present at a school open house.
-#Takes in an excel document and exports it as a 
+#Takes in an excel document and exports it as a
 #choropleth map to plot.ly.
 #My plotly projects are viewable at: https://plot.ly/~davisCook
 import pandas as pd
@@ -15,9 +15,21 @@ import plotly.plotly as py
 #code is a strgin and is the state abbreviation.
 #state is a string and is the state
 #total students is an int stating the total number of students from the state
-df = pd.read_excel("rsvpOH1.xlsx")
+dfT = pd.read_excel("rsvpOH1.xlsx")
+states = dfT["Address Region"].tolist()
 
-#Makes sure that the column heads are strings
+#Puts all the state abbreviation in the dictionary
+statesD = {}
+for x in states:
+    if x in statesD:
+        statesD[x] += 1
+    else:
+        statesD[x] = 1
+
+
+
+
+# Makes sure that the column heads are strings
 for col in df.columns:
     df[col] = df[col].astype(str)
 
