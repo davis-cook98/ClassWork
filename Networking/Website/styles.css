@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 12% auto 450px 12%;
+    grid-template-rows: 300px auto auto auto;
+    grid-template-areas: "hero        hero        hero        hero"
+                         ".           blog-posts  side-bar    ."
+                         ".           news        side-bar    ."
+                         "main-footer main-footer main-footer main-footer";
+}
+
+.hero{
+    grid-area: hero;
+    width: 100%;
+    padding: 55px 12% 0 12%;
+    background-image: url("HeroImg.jpg");
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+}
+/* Place text in the middle of the image */
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 17%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #004488;
+  text-shadow: -.5px 0 white, 0 .5px white, .5px 0 white, 0 -.5px white;
+}
+
+.about-me{
+    grid-area: blog-posts;
+    margin-right: 90px;
+}
+
+.news{
+    grid-area: news;
+    margin-right: 90px;
+}
+
+.classes{
+    grid-area: side-bar;
+    background-color: #004488;
+    padding: 45px 25px 0 25px;
+    margin: 20px 0;
+    color: white;
+}
+
+.main-footer{
+    grid-area: main-footer;
+    background-color: #A2AAAD;
+    padding: 25px 12%;
+    color: white;
+}
+
+@media (max-width: 1600px) {
+    body{
+        grid-template-columns: 2% auto 400px 2%;
+    }
+    .top-bar{
+        padding: 4px 2%;
+    }
+    .main-header{
+        padding: 12px 2%;
+    }
+    .hero{
+        padding: 55px 2% 0 2%;
+    }
+    .main-footer{
+        padding: 25px 2%;
+    }
+}
+
+@media (max-width: 1050px) {
+    .hero{
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        justify-content: center;
+        padding: 55px 2%;
+    }
+    .hero-text {
+        text-align: center;
+        position: absolute;
+        top: 12%;
+        left: 50%;
+    }
+    .side-bar{
+        padding-bottom: 15px;
+    }
+    .news, .blog-posts{
+        margin-right: 0;
+    }
+    .news h2, .blog-posts h2{
+        font-size: 32px;
+    }
+    .news ul, .blog-posts ul{
+        margin-left: 25px;
+    }
+    .excerpt{
+        margin-left: 0;
+    }
+    body{
+        grid-template-columns: 3% auto 3%;
+        grid-template-rows:  150px auto auto 250px auto;
+        grid-template-areas: "hero        hero        hero"
+                             ".           blog-posts  ."
+                             ".           news        ."
+                             ".           side-bar    ."
+                             "main-footer main-footer main-footer";
+    }
+}
