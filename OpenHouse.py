@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 
-@author: cookdavi
+@author: Davis Cook and John Murzaku 
 """
 #Code written to present at a school open house.
 #Takes in an excel document and exports it as a
